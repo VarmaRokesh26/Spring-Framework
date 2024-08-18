@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Alien {
 
-    @Value("21")
+    @Value("#{ageservice.giveAge()}")
     private int age;
     private Computer computer;
     
