@@ -1,8 +1,8 @@
 package com.spring.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-// import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.Primary;
 
 import com.spring.Alien;
@@ -15,7 +15,9 @@ public class AppConfig {
 
     
     @Bean
-    public Alien alien(Computer computer) {
+    // Even though the dektop() bean is set to primary the name referred by the 
+    // qualifier is given the top priority when two beans are defined with the same interface
+    public Alien alien(@Qualifier("laptop") Computer computer) {
         Alien obj = new Alien();
         obj.setAge(30);
         obj.setComputer(computer);
@@ -30,7 +32,7 @@ public class AppConfig {
     public Desktop desktop() {
         return new Desktop();
     }
-
+    
     @Bean 
     public Laptop laptop() {
         return new Laptop();
