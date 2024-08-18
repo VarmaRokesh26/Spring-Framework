@@ -12,8 +12,11 @@
         <!-- <constructor-arg type="com.spring.Laptop" ref="laptop"/>
         <constructor-arg type="int" value="31"/> -->
 
-        <constructor-arg index="1" ref="laptop"/>
-        <constructor-arg index="0" value="31"/>
+        <!-- <constructor-arg index="1" ref="laptop"/>
+        <constructor-arg index="0" value="31"/> -->
+
+        <constructor-arg name="age" value="31"/>
+        <constructor-arg name="laptop" ref="laptop"/>
     </bean>
 
     <bean id="laptop" class="com.spring.Laptop" />
