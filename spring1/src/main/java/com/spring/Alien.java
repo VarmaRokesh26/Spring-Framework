@@ -10,9 +10,7 @@ import org.springframework.stereotype.Component;
 public class Alien {
 
     private int age;
-    
-    @Autowired
-    @Qualifier("laptop")
+
     private Computer computer;
 
     public Alien() {
@@ -43,6 +41,8 @@ public class Alien {
         return computer;
     }
 
+    @Autowired
+    @Qualifier("desktop")
     public void setComputer(Computer computer) {
         this.computer = computer;
     }
