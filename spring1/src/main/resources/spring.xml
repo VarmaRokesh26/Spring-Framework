@@ -7,7 +7,9 @@
 
     <bean id="alien" class="com.spring.Alien" autowire="byType">
         <property name="age" value="21" />
-        <property name="computer" ref="laptop" />
+        <property name="computer">
+            <bean id="laptop" class="com.spring.Laptop" primary="true"/>
+        </property>
 
         <!-- <constructor-arg type="com.spring.Laptop" ref="laptop"/>
         <constructor-arg type="int" value="31"/> -->
@@ -19,7 +21,7 @@
         <constructor-arg name="age" value="31"/> -->
     </bean>
 
-    <bean id="laptop" class="com.spring.Laptop" primary="false"/>
+    <!-- <bean id="laptop" class="com.spring.Laptop" primary="true"/> -->
     <bean class="com.spring.Desktop" lazy-init="true"/>
     <!-- <bean id="laptop1" class="com.spring.Laptop" /> -->
 

@@ -16,10 +16,10 @@ public class App {
         System.out.println(obj1.getAge());
         obj1.code();
 
-        Computer computer = context.getBean(Desktop.class);
+        Computer computer = context.getBean(Computer.class);
         computer.compile();
-        Desktop desk = context.getBean(Desktop.class);
-        desk.compile();
+        // Desktop desk = context.getBean(Desktop.class);
+        // desk.compile();
 
     }
 }
