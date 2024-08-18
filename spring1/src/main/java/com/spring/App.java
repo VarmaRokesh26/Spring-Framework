@@ -21,7 +21,8 @@ public class App {
         Desktop dt = context.getBean(Desktop.class);
         dt.compile();
 
-
+        Desktop dt1 = context.getBean(Desktop.class);
+        dt1.compile();
 
 
         // ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
