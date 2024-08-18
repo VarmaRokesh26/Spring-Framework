@@ -8,7 +8,7 @@ public class Alien {
     private Computer computer;
 
     public Alien() {
-        // System.out.println("Alien Object Created");
+        System.out.println("Alien Object Created");
     }
 
     // @ConstructorProperties({"age","laptop"})
