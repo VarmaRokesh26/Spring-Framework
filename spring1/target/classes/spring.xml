@@ -6,7 +6,8 @@
     <!-- <bean id="alien" class="com.spring.Alien" scope="prototye" /> -->
 
     <bean id="alien" class="com.spring.Alien">
-        <property name="age" value="21"></property>
+        <!-- <property name="age" value="21"></property> -->
+        <constructor-arg value="31"/>
         <property name="laptop" ref="laptop"></property>
     </bean>
 
