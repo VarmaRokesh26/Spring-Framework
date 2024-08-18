@@ -12,8 +12,14 @@ public class App {
     public static void main( String[] args )
     {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Alien obj1 = (Alien) context.getBean("alien");
+        Alien obj1 = context.getBean("alien", Alien.class);
         System.out.println(obj1.getAge());
         obj1.code();
+
+        Computer computer = context.getBean(Desktop.class);
+        computer.compile();
+        Desktop desk = context.getBean(Desktop.class);
+        desk.compile();
+
     }
 }

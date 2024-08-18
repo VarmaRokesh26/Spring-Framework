@@ -19,8 +19,8 @@
         <constructor-arg name="age" value="31"/> -->
     </bean>
 
-    <bean id="laptop" class="com.spring.Laptop" primary="true"/>
-    <bean id="desktop" class="com.spring.Desktop" lazy-init="true"/>
+    <bean id="laptop" class="com.spring.Laptop" primary="false"/>
+    <bean class="com.spring.Desktop" lazy-init="true"/>
     <!-- <bean id="laptop1" class="com.spring.Laptop" /> -->
 
 </beans>
