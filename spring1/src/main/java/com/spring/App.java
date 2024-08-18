@@ -5,7 +5,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.spring.config.AppConfig;
 
-// import org.springframework.context.ApplicationContext;
 // import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -18,12 +17,15 @@ public class App {
     {
 
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        Desktop dt = context.getBean(Desktop.class);
-        dt.compile();
+        // Desktop dt = context.getBean(Desktop.class);
+        // dt.compile();
 
-        Desktop dt1 = context.getBean(Desktop.class);
-        dt1.compile();
+        // Desktop dt1 = context.getBean(Desktop.class);
+        // dt1.compile();
 
+        Alien obj1 = context.getBean(Alien.class);
+        System.out.println(obj1.getAge());
+        obj1.code();
 
         // ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         // Alien obj1 = context.getBean("alien", Alien.class);
