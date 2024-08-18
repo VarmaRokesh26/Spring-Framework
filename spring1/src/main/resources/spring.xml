@@ -7,7 +7,9 @@
 
     <bean id="alien" class="com.spring.Alien">
         <property name="age" value="21"></property>
+        <property name="laptop" ref="laptop"></property>
     </bean>
-    <!-- <bean id="laptop" class="com.spring.Laptop" /> -->
+
+    <bean id="laptop" class="com.spring.Laptop" />
 
 </beans>
