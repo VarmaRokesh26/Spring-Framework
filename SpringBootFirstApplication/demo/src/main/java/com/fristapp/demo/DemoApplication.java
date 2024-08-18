@@ -12,6 +12,7 @@ public class DemoApplication {
 		
 		Alien al = context.getBean(Alien.class);
 		al.code();
+		System.out.println("Age : " + al.getAge());
 	}
 
 }
