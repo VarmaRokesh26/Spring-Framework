@@ -5,9 +5,9 @@
 
     <!-- <bean id="alien" class="com.spring.Alien" scope="prototye" /> -->
 
-    <bean id="alien" class="com.spring.Alien">
-        <!-- <property name="age" value="21" /> -->
-        <!-- <property name="laptop" ref="laptop" /> -->
+    <bean id="alien" class="com.spring.Alien" autowire="byType">
+        <property name="age" value="21" />
+        <!-- <property name="computer" ref="laptop" /> -->
 
         <!-- <constructor-arg type="com.spring.Laptop" ref="laptop"/>
         <constructor-arg type="int" value="31"/> -->
@@ -15,11 +15,12 @@
         <!-- <constructor-arg index="1" ref="laptop"/>
         <constructor-arg index="0" value="31"/> -->
 
-        <constructor-arg name="laptop" ref="laptop"/>
-        <constructor-arg name="age" value="31"/>
+        <!-- <constructor-arg name="laptop" ref="laptop"/>
+        <constructor-arg name="age" value="31"/> -->
     </bean>
 
-    <bean id="laptop" class="com.spring.Laptop" />
+    <bean id="computer" class="com.spring.Laptop" />
+    <!-- <bean id="desktop" class="com.spring.Desktop" /> -->
     <!-- <bean id="laptop1" class="com.spring.Laptop" /> -->
 
 </beans>

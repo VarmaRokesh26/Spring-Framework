@@ -1,6 +1,6 @@
 package com.spring;
 
-import java.beans.ConstructorProperties;
+// import java.beans.ConstructorProperties;
 
 public class Alien {
 
@@ -8,7 +8,7 @@ public class Alien {
     private Computer computer;
 
     public Alien() {
-        System.out.println("Alien Object Created");
+        // System.out.println("Alien Object Created");
     }
 
     // @ConstructorProperties({"age","laptop"})
@@ -19,7 +19,6 @@ public class Alien {
     // }
 
     public void setAge(int age) {
-        System.out.println("Setter Called for Alien Age");
         this.age = age;
     }
 
@@ -36,7 +35,7 @@ public class Alien {
         return computer;
     }
 
-    public void setLaptop(Computer computer) {
+    public void setComputer(Computer computer) {
         this.computer = computer;
     }
 
