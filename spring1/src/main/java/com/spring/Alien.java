@@ -9,9 +9,10 @@ public class Alien {
         System.out.println("Alien Object Created");
     }
 
-    public Alien(int age) {
+    public Alien(int age, Laptop laptop) {
         System.out.println("Parametrized Constructor");
         this.age = age;
+        this.laptop = laptop;
     }
 
     public void setAge(int age) {
