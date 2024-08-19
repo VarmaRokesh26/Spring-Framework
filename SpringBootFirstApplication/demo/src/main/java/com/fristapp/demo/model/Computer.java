@@ -1,4 +1,4 @@
-package com.fristapp.demo;
+package com.fristapp.demo.model;
 
 public interface Computer {
 
