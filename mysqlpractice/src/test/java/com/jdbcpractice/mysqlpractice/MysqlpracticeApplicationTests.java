@@ -1,0 +1,13 @@
+package com.jdbcpractice.mysqlpractice;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class MysqlpracticeApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
