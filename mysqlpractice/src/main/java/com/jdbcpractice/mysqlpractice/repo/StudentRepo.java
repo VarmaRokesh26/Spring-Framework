@@ -1,12 +1,9 @@
 package com.jdbcpractice.mysqlpractice.repo;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import com.jdbcpractice.mysqlpractice.model.Student;
@@ -27,21 +24,14 @@ public class StudentRepo {
     public List<Student> findAll() {
         String query = "SELECT * FROM student";
 
-        RowMapper<Student> mapper = new RowMapper<Student>() {
+        return jdbc.query(query, (resultSet, rowNum) -> {
+            Student student = new Student();
+            student.setRollNo(resultSet.getInt("rollNo"));
+            student.setName(resultSet.getString("s_name"));
+            student.setMarks(resultSet.getInt("marks"));
 
-            @SuppressWarnings("null")
-            @Override
-            public Student mapRow(ResultSet resultSet, int rowNum) throws SQLException {
-                Student student = new Student();
-                student.setRollNo(resultSet.getInt("rollNo"));
-                student.setName(resultSet.getString("s_name"));
-                student.setMarks(resultSet.getInt("marks"));
-                return student;
-            }
-            
-        };
-
-        return jdbc.query(query, mapper);
+            return student;
+        });
     }
 
     public JdbcTemplate getJdbc() {
