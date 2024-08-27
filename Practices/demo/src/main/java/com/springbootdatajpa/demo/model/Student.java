@@ -3,10 +3,15 @@ package com.springbootdatajpa.demo.model;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 @Component
 @Scope("prototype")
+@Entity
 public class Student {
 
+    @Id
     private int rollNo;
     private String name;
     private int marks;
