@@ -1,4 +1,4 @@
-package com.springbootdatajpa.demo.model;
+package com.springbootdatajpa.jpademo.model;
 
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

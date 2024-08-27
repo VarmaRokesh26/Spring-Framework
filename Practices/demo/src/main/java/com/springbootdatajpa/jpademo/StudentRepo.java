@@ -1,9 +1,9 @@
-package com.springbootdatajpa.demo;
+package com.springbootdatajpa.jpademo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.springbootdatajpa.demo.model.Student;
+import com.springbootdatajpa.jpademo.model.Student;
 
 @Repository
 public interface StudentRepo extends JpaRepository<Student, Integer> {
