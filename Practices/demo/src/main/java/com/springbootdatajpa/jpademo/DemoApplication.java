@@ -39,6 +39,8 @@ public class DemoApplication {
 		// repo.save(s3);
 
 		repo.findAll().forEach(System.out::println);
+
+		System.out.println(repo.findByName("Varma"));
 	}
 
 }
