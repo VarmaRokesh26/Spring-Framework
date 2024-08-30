@@ -15,7 +15,7 @@ public class StudentRepo {
     
     public void save(Student s) {
         
-        String query = "INSERT INTO student (rollNo, s_name, marks) VALUES(?, ?, ?)";
+        String query = "INSERT INTO student (rollNo, name, marks) VALUES(?, ?, ?)";
 
         int rows = jdbc.update(query, s.getRollNo(), s.getName(), s.getMarks());
         System.out.println(rows + "effected");
@@ -27,7 +27,7 @@ public class StudentRepo {
         return jdbc.query(query, (resultSet, rowNum) -> {
             Student student = new Student();
             student.setRollNo(resultSet.getInt("rollNo"));
-            student.setName(resultSet.getString("s_name"));
+            student.setName(resultSet.getString("name"));
             student.setMarks(resultSet.getInt("marks"));
 
             return student;
