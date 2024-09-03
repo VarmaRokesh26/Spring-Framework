@@ -13,14 +13,27 @@ public class HomeController {
         return "index";
     }
 
-    @RequestMapping("add")
-    public ModelAndView add(@RequestParam("num1") int num11, int num2, ModelAndView mv) {
+    // @RequestMapping("add")
+    // public ModelAndView add(@RequestParam("num1") int num1, @RequestParam("num2") int num2, ModelAndView mv) {
 
-        int num = num11 + num2;
-        mv.addObject("num", num);
+    //     int num = num1 + num2;
+    //     mv.addObject("num", num);
+    //     mv.setViewName("result");
+
+    //     System.out.println(num);
+    //     return mv;
+    // }
+
+    @RequestMapping("addAlien")
+    public ModelAndView addAlien(@RequestParam("aid") int aid, @RequestParam("aname") String aname, ModelAndView mv) {
+
+        Alien alien = new Alien();
+        alien.setAid(aid);
+        alien.setAname(aname);
+
+        mv.addObject("alien", alien);
+        System.out.println(alien);
         mv.setViewName("result");
-
-        System.out.println(num);
         return mv;
     }
 }
