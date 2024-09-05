@@ -7,7 +7,7 @@ pageEncoding="UTF-8"%>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Telusko Job Portal</title>
+    <title>Job Portal</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -36,7 +36,7 @@ pageEncoding="UTF-8"%>
     <nav class="navbar navbar-expand-lg navbar-light bg-clr">
       <div class="container">
         <a class="navbar-brand fs-1 fw-medium" href="#"
-          >Telusko Job Portal Web App</a
+          >Job Portal Web App</a
         >
         <button
           class="navbar-toggler"
