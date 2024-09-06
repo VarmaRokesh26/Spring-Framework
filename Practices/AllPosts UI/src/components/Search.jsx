@@ -20,7 +20,7 @@ const Search = () => {
             setPost(response.data);
         }
          fetchInitialPosts();
-      }, []);
+      }, [setPost]);
 
   return (
         <Grid container spacing={2} sx={{ margin: "2%" }}>
@@ -39,8 +39,8 @@ const Search = () => {
       {post &&
         post.map((p) => {
           return (
-            <Grid key={p.id} item xs={12} md={6} lg={4}>
-              <Card sx={{ padding: "3%", overflow: "hidden", width: "84%" }}>
+            <Grid key={p.id} item xs={12} md={6} lg={4} >
+              <Card sx={{ padding: "3%", overflow: "hidden", width: "84%" ,backgroundColor:"#003049",color:"white"}}>
                 <Typography
                   variant="h5"
                   sx={{ fontSize: "2rem", fontWeight: "600" }}
