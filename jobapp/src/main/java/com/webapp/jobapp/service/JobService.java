@@ -20,4 +20,8 @@ public class JobService {
     public List<JobPost> getAllJobs() {
         return repo.getAllJobs();
     }
+
+    public JobPost getJobPost(int postId) {
+        return repo.getJobPost(postId);
+    }
 }

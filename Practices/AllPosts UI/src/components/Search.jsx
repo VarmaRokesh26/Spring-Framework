@@ -15,7 +15,7 @@ const Search = () => {
 
     useEffect(() => {
         const fetchInitialPosts = async () => {
-            const response = await axios.get(`http://localhost:8000/posts`);
+            const response = await axios.get(`http://localhost:8080/jobPosts`);
             console.log(response);
             setPost(response.data);
         }
@@ -40,14 +40,14 @@ const Search = () => {
         post.map((p) => {
           return (
             <Grid key={p.id} item xs={12} md={6} lg={4} >
-              <Card sx={{ padding: "3%", overflow: "hidden", width: "84%" ,backgroundColor:"#003049",color:"white"}}>
+              <Card sx={{ padding: "3%", overflow: "hidden", width: "84%" ,backgroundColor:"grey",color:"black"}}>
                 <Typography
                   variant="h5"
                   sx={{ fontSize: "2rem", fontWeight: "600" }}
                 >
              {p.postProfile}
                 </Typography>
-                <Typography sx={{ color: "#585858", marginTop:"2%" }} variant="body" >
+                <Typography sx={{ color: "black", marginTop:"2%" }} variant="body" >
                   Description: {p.postDesc}
                 </Typography>
                 <br />

@@ -108,4 +108,13 @@ public class JobRepo {
 		jobs.add(jobpost);
 		jobs.forEach(System.out::println);
 	}
+
+	public JobPost getJobPost(int postId) {
+
+		for(JobPost job : jobs) {
+			if(job.getPostId() == postId)
+				return job;
+		}
+		return null;
+	}
 }
