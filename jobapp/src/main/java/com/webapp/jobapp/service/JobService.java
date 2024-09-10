@@ -25,6 +25,10 @@ public class JobService {
         return repo.findById(postId).orElse(new JobPost());
     }
 
+    public List<JobPost> search(String keyword) {
+        return repo.findByPostProfileContainingOrOrPostDescContaining(keyword, keyword);
+    }
+
     public void updateJob(JobPost jobPost) {
         repo.save(jobPost);
     }
