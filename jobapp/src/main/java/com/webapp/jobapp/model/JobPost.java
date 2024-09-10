@@ -3,7 +3,7 @@ package com.webapp.jobapp.model;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
-
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Component
+@Entity
 public class JobPost {
 
     private int postId;
