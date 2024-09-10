@@ -29,7 +29,7 @@ public class JobService {
 		int reqexp = 0;
 		if(keyword.matches("[0-9]"))
 			reqexp = Integer.parseInt(keyword);
-        return repo.findByPostProfileContainingIgnoringCaseOrPostDescContainingIgnoringCaseOrReqExperienceIs(keyword, keyword, reqexp);
+        return repo.findByPostProfileContainingOrOrPostDescContainingAllIgnoreCaseOrReqExperience(keyword, keyword, reqexp);
     }
 
     public void updateJob(JobPost jobPost) {
