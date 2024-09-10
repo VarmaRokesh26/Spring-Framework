@@ -26,7 +26,10 @@ public class JobService {
     }
 
     public List<JobPost> search(String keyword) {
-        return repo.findByPostProfileContainingOrOrPostDescContaining(keyword, keyword);
+		int reqexp = 0;
+		if(keyword.matches("[0-9]"))
+			reqexp = Integer.parseInt(keyword);
+        return repo.findByPostProfileContainingOrOrPostDescContainingAllIgnoreCaseOrReqExperience(keyword, keyword, reqexp);
     }
 
     public void updateJob(JobPost jobPost) {
