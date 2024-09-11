@@ -11,7 +11,7 @@
 	<groupId>com.webapp</groupId>
 	<artifactId>jobapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>jobapp.server</name>
+	<name>jobapp</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
