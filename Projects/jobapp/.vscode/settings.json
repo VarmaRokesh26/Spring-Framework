@@ -1,7 +1,0 @@
-{
-    "java.compile.nullAnalysis.mode": "automatic",
-    "files.autoSaveDelay": 500,
-    "files.autoSave": "afterDelay",
-    "java.configuration.updateBuildConfiguration": "automatic",
-    "git.ignoreLimitWarning": true
-}
