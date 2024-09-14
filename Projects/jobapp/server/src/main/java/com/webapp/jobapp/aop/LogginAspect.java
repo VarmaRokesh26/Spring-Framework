@@ -2,6 +2,7 @@ package com.webapp.jobapp.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -24,5 +25,10 @@ public class LogginAspect {
     @After("execution(* com.webapp.jobapp.service.JobService.getJobPost(..))")
     public void logMethodAfter(JoinPoint jp) {
         LOGGER.info("Method Called " + jp.getSignature().getName());
+    }
+
+    @AfterThrowing("execution(* com.webapp.jobapp.JobService.getJobPost(..))")
+    public void logMethodAfterThrowing(JoinPoint jp) {
+        LOGGER.info("Method Called After thrown " + jp.getSignature().getName());
     }
 }
