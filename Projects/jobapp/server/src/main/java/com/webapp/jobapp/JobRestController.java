@@ -23,7 +23,7 @@ public class JobRestController {
     @Autowired
     public JobService service;
 
-    @GetMapping("jobPosts")
+    @GetMapping({"jobPosts", "/"})
     public List<JobPost> getAllJobs(Model m) {
         return service.getAllJobs();
     }
