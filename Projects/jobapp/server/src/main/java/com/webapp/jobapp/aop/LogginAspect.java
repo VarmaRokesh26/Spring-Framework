@@ -1,6 +1,7 @@
 package com.webapp.jobapp.aop;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.slf4j.Logger;
@@ -17,6 +18,11 @@ public class LogginAspect {
 
     @Before("execution(* com.webapp.jobapp.service.JobService.getJobPost(..))")
     public void logMethodCall(JoinPoint jp) {
+        LOGGER.info("Method Called " + jp.getSignature().getName());
+    }
+
+    @After("execution(* com.webapp.jobapp.service.JobService.getJobPost(..))")
+    public void logMethodAfter(JoinPoint jp) {
         LOGGER.info("Method Called " + jp.getSignature().getName());
     }
 }
