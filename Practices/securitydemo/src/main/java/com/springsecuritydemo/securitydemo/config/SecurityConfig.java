@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
-// import org.springframework.security.config.http.SessionCreationPolicy;
+// import org.springframework.security.config.annotation.web.configurers.CsrfConfigurer;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -16,21 +16,21 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         
-        Customizer<CsrfConfigurer<HttpSecurity>> custCsrf = new Customizer<CsrfConfigurer<HttpSecurity>>() {
-            @Override
-            public void customize(CsrfConfigurer<HttpSecurity> t) {
-                t.disable();
-            }
-        };
+        // Customizer<CsrfConfigurer<HttpSecurity>> custCsrf = new Customizer<CsrfConfigurer<HttpSecurity>>() {
+        //     @Override
+        //     public void customize(CsrfConfigurer<HttpSecurity> t) {
+        //         t.disable();
+        //     }
+        // };
 
-        http.csrf(custCsrf);
+        // http.csrf(custCsrf);
 
-        // http.csrf(customizer -> customizer.disable());
-        // http.authorizeHttpRequests(request -> request.anyRequest().authenticated());
-        // // http.formLogin(Customizer.withDefaults());
-        // http.httpBasic(Customizer.withDefaults());
-        // http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+        http.csrf(customizer -> customizer.disable())
+            .authorizeHttpRequests(request -> request.anyRequest().authenticated())
+            .httpBasic(Customizer.withDefaults())
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         
+        // http.formLogin(Customizer.withDefaults());
         return http.build();
     }
 }
