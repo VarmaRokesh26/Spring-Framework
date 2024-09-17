@@ -1,0 +1,19 @@
+package com.springsecuritydemo.securitydemo.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springsecuritydemo.securitydemo.model.User;
+import com.springsecuritydemo.securitydemo.repository.UserRepo;
+
+@Service
+public class UserService {
+
+    @Autowired
+    private UserRepo userRepo;
+    
+    public User saveUser(User user) {
+        return userRepo.save(user);
+    }
+
+}
