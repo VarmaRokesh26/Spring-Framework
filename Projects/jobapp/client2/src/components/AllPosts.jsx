@@ -2,7 +2,7 @@ import React from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import SearchIcon from '@mui/icons-material/Edit';
-
+import Navbar from './Navbar'
 import {
   Box,
     Card,
@@ -48,6 +48,7 @@ const handleEdit = (id) => {
 
   return (
     <>
+      <Navbar/>
       <Grid container spacing={2} sx={{ margin: "2%" }}>
       <Grid item xs={12} sx={12} md={12} lg={12}>
       <Box>
