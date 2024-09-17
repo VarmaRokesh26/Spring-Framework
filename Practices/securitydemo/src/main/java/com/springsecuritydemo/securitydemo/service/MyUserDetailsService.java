@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.springsecuritydemo.securitydemo.model.User;
+import com.springsecuritydemo.securitydemo.model.UserPrinciple;
 import com.springsecuritydemo.securitydemo.repository.UserRepo;
 
 @Service
@@ -23,7 +24,7 @@ public class MyUserDetailsService implements UserDetailsService{
             System.out.println("User 404");
             throw new UsernameNotFoundException("User 404");
         }
-        return user;
+        return new UserPrinciple(user);
     }
 
 }
