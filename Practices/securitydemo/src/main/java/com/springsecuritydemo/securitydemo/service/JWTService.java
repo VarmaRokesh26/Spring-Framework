@@ -4,13 +4,13 @@ import java.util.Map;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Base64;
-// import java.util.function.Function;
+import java.util.function.Function;
 
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
-// import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
@@ -54,12 +54,34 @@ public class JWTService {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
-
+    
     public String extractUserName(String token) {
-        return null;
+        return extractClaim(token, Claims::getSubject);
+    }
+
+    public <T> T extractClaim(String token, Function<Claims, T> claimResolver) {
+        final Claims claims = extractAllClaims(token);
+        return claimResolver.apply(claims);
+    }
+
+    public Claims extractAllClaims(String token) {
+        return Jwts.parserBuilder()
+                .setSigningKey(getKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
     }
 
     public boolean validateToken(String token, UserDetails userDetails) {
-        return true;
+        final String userName = extractUserName(token);
+        return (userName.equals(userDetails.getUsername()) && !isTokenExpired(token));
+    }
+
+    public boolean isTokenExpired(String token) {
+        return extractExpiration(token).before(new Date());
+    }
+
+    public Date extractExpiration(String token) {
+        return extractClaim(token, Claims::getExpiration);
     }
 }
