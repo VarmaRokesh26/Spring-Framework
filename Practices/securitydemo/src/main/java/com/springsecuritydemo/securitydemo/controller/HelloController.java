@@ -10,12 +10,12 @@ public class HelloController {
 
     @GetMapping("hello")
     public String greet(HttpServletRequest request) {
-        return "Hello Welcome" + request.getSession().getId();
+        return "Hello Welcome";
     }
 
     @GetMapping("about")
     public String about(HttpServletRequest request) {
-        return "About us" + request.getSession().getId();
+        return "About us";
     }
 }
  
