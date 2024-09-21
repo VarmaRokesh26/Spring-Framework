@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Base64;
 // import java.util.function.Function;
 
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
@@ -52,5 +53,13 @@ public class JWTService {
     private Key getKey() {
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
+    }
+
+    public String extractUserName(String token) {
+        return null;
+    }
+
+    public boolean validateToken(String token, UserDetails userDetails) {
+        return true;
     }
 }
