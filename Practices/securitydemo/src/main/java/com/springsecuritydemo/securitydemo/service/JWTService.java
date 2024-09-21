@@ -34,7 +34,7 @@ public class JWTService {
             System.out.println("Secret Key : " + secretKey.toString());
             return Base64.getEncoder().encodeToString(secretKey.getEncoded());
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Error generating secret key");
+            throw new RuntimeException("Error generating secret key", e);
         }
     }
 
