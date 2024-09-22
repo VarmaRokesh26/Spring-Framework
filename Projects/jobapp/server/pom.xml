@@ -67,6 +67,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>JOBAPP</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
